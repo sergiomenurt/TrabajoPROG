@@ -9,27 +9,27 @@ import javax.swing.*;
 public class Main {
     
     public static void main(String []args){
-
+        
      boolean salir = false;
         int opcion = 0;
-        String s = "si";
-        String n = "no";
+        
             do {
-                opcion = Integer.parseInt(JOptionPane.showInputDialog(" Introduce la opción que desee "));
+                
+                JOptionPane.showMessageDialog(null, "BIENVENIDO");
+                
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(" Seleccione el juego que desee juger:\n 1.Rompe Ladrillos\n 2.Snake\n 3.Saltar vacas  "));
                 switch (opcion) {
                     case 1:
-
-
-                        JOptionPane.showMessageDialog(null, " Has seleccionado la opción 1 ");
+                        JOptionPane.showMessageDialog(null, " Has seleccionado el Rompe Ladrillos ");
                         raqueta.main(args);
                         break;
 
                     case 2:
-                        JOptionPane.showMessageDialog(null, " Has seleccionado la opción 2 ");
+                        JOptionPane.showMessageDialog(null, " Has seleccionado el Snake ");
                         Snake.main(args);
                         break;
                     case 3:
-                        JOptionPane.showMessageDialog(null, " Has seleccionado la opción 3 ");
+                        JOptionPane.showMessageDialog(null, " Has seleccionado el juego de saltar vacas ");
                         Principal.PrimerMinijuego();
                         break;
                     case 4:
@@ -39,6 +39,7 @@ public class Main {
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, " Solo números entre el 1 y el 4 ");
+                        
                 }
             } while (salir=false);
         }

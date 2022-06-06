@@ -34,15 +34,10 @@ public class Principal {
 
                     String s = "si";
 
-                    JOptionPane.showMessageDialog(null," Usted será enviado otra vez al menú");
-                    Main m = new Main();
-
-
-
-
-
-
-
+                    JOptionPane.showMessageDialog(null,"GRACIAS POR JUGAR");
+                    break;
+                    
+ 
 
                 }
             }else{

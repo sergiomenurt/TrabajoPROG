@@ -1,5 +1,6 @@
 package CodigoJuegos.Snake;
 
+import CodigoJuegos.Operaciones;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.*;
@@ -13,6 +14,7 @@ import javax.swing.JPanel;
 
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 
 public class Snake extends JFrame {
@@ -152,6 +154,8 @@ public class Snake extends JFrame {
                 g.setFont(new Font("TimesRoman", Font.BOLD, 20));
                 g.drawString("N to Start New Game", 100, 320);
                 g.drawString("ESC to Exit", 100, 340);
+                
+               
             }
 
         }
@@ -233,5 +237,7 @@ public class Snake extends JFrame {
             }
         }
     }
+    
+    
 
 }
