@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BaseDatosProyecto;
+package CodigoJuegos;
 
 /**
  *
@@ -30,7 +30,7 @@ public class Operaciones {
     public static Connection Enlace() throws SQLException{
         
         //ruta de la base de datos la cual crearemos
-        String ruta = "jdbc:sqlite:C:\\Users\\34653\\OneDrive\\Escritorio\\sergio.db";
+        String ruta = "C:\\Users\\sergi\\OneDrive\\Escritorio\\basesergio.db";
         
         try{
             cn = DriverManager.getConnection(ruta);
@@ -59,7 +59,7 @@ public class Operaciones {
             Statement s=cn.createStatement();
             
             //consulta a mostrar
-            String query = "select * from producto";
+            String query = "select * from Puntuaciones";
             rs = s.executeQuery(query);
             ResultSetMetaData rsmd = rs.getMetaData();
             
@@ -99,14 +99,14 @@ public class Operaciones {
     }
     
     //creamos metodo para insertar datos
-    public void AgregarDatos(String id, String nombre,String precio){
+    public void AgregarDatos(String Juego, String Nombre,int Puntuaciones){
         
         //dentro de try catch por si los errores
         
         try{
-            cn = Enlace();
+            Connection cn = Enlace();
             Statement s=cn.createStatement();
-            String query = "INSERT INTO producto(id,nombre,precio)values ('"+id+"','"+nombre+"',"+precio+")";
+            String query = "INSERT INTO Puntuaciones(Juego,Nombre,Puntuaciones)values ('"+Juego+"''"+Nombre+"',"+Puntuaciones+")";
             s.executeUpdate(query);
             s.close();
             cn.close();
@@ -118,46 +118,8 @@ public class Operaciones {
        
         }
         
-        //creamos metodo para eliminar datos
-       
         
     }
     
-     
-        public void EliminarConsulta(String id){
-            
-            try{
-                cn = Enlace();
-                Statement s = cn.createStatement();
-                String query = "DELETE FROM producto WHERE id='"+id+"'";
-                s.executeUpdate(query);
-                s.close();
-                cn.close();
-                JOptionPane.showMessageDialog(null, "ELIMINADO");
-                
-                
-            }catch(Exception e){JOptionPane.showMessageDialog(null, e);}
-            
-        }
-        
-        //creamos metodo para modificar datos
-        
-        public void ModificarConsulta(String nombre,String precio,String id){
-            
-            try{
-                cn = Enlace();
-                Statement s = cn.createStatement();
-                String query = "UPDATE producto SET nombre='"+nombre+"', precio="+precio+"WHERE id ="+id+"";
-                s.executeUpdate(query);
-                s.close();
-                cn.close();
-                
-                JOptionPane.showMessageDialog(null, "MODIFICADO");
-                
-            }catch(Exception e){JOptionPane.showMessageDialog(null, e);
-            
-        }
-        
-    }
 }
 

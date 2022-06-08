@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JOptionPane;
 
 import javax.swing.JPanel;
 
@@ -87,11 +88,15 @@ public class tablero extends JPanel implements comun {
             g.drawString(message,
                     (comun.WIDTH - metr.stringWidth(message)) / 2,
                     comun.WIDTH / 2);
+            
+            
         }
 
 
         Toolkit.getDefaultToolkit().sync();
         g.dispose();
+        
+        
     }
 
     private class TAdapter extends KeyAdapter {
@@ -137,6 +142,7 @@ public class tablero extends JPanel implements comun {
             if (j == 30) {
                 message = "Victory";
                 stopGame();
+                
             }
         }
 
