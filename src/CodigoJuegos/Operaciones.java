@@ -26,7 +26,7 @@ public class Operaciones {
     
     
     //creamos la conexion
-    static Connection cn =null;
+    private static Connection cn =null;
     
     //creamos la clase conexion
     public static Connection Enlace() throws SQLException{
