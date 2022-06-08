@@ -21,9 +21,11 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class Operaciones {
+
+    private static Connection instance;
     
     
-    //creamos la coneccion
+    //creamos la conexion
     static Connection cn =null;
     
     //creamos la clase conexion
@@ -40,6 +42,14 @@ public class Operaciones {
             JOptionPane.showMessageDialog(null, e);
         }
         return cn;
+    }
+
+    public static Connection getInstance(){
+        //solo hago el new si es null
+        if(instance == null)
+            instance = new Connection();
+        //devuelvo siempre la única instancia
+        return instance;
     }
     
     //creamos las variables para la conexion
