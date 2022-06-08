@@ -14,6 +14,8 @@ public class Main {
         int opcion = 0;
         
             do {
+
+                //creamos un menú para elegir el juego que se quiera jugar
                 
                 JOptionPane.showMessageDialog(null, "BIENVENIDO");
                 
